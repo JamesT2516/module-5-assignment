@@ -2,170 +2,154 @@
 
 This project is my ongoing portfolio for the Front-End Web Development course.
 
-I first created the portfolio using semantic HTML5 and then added CSS to improve the layout, colours, typography, and overall presentation. For this assignment, I developed the portfolio further by making it responsive across mobile, tablet, and desktop screen sizes.
+I started the portfolio using semantic HTML5 and then added CSS to improve the layout, colours, typography, and overall presentation. In Module 4, I developed the website further by making it responsive across mobile, tablet, and desktop screen sizes.
+
+For Module 5, I introduced JavaScript to add behaviour and interactivity to the website. This is the first stage of the project where the page responds to user actions using JavaScript.
+
+## Module Progression
+
+The portfolio has developed as I have worked through the course:
+
+- HTML5 for webpage structure and semantic content
+- CSS for colours, typography, spacing, and styling
+- Flexbox and CSS Grid for layouts
+- Media queries for responsive design
+- CSS transitions and hover effects
+- JavaScript for behaviour and interactivity
+- DOM manipulation and event handling
+- Browser testing and debugging
+- Git and GitHub for version control
 
 ## Responsive Design Approach
 
 I used a mobile-first approach for the responsive design.
 
-The base CSS is designed for smaller screens first. I then used media queries to adjust the layout as the available screen size increases.
+The base CSS is designed for smaller screens first. Media queries are then used to adjust the layout as the available screen size increases.
 
-The main breakpoints used are:
+The main breakpoints are:
 
 - Mobile: base styles below 768px
 - Tablet: 768px and above
 - Desktop: 1024px and above
 
-I tested the website at:
+CSS Grid and Flexbox are both used in the project.
 
-- 375px for mobile
-- 768px for tablet
-- 1024px for desktop
+On smaller screens, the navigation uses a two-column Grid layout so the links remain easy to use without taking up too much vertical space.
 
-This helped me check that the content remained readable and that there was no horizontal scrolling or content overflowing outside its containers.
+On tablet and desktop screens, the navigation changes to Flexbox and displays the links horizontally.
 
-## Layout
+The main content also changes to a two-column Grid layout on larger screens while the About Me and Contact Me sections span the full available width.
 
-I used both CSS Grid and Flexbox in the project.
+## Module 5 JavaScript Interaction
 
-### CSS Grid
+For Module 5, I created a floating **Let's Connect** contact message.
 
-CSS Grid is used for the main page layout on tablet and desktop screens.
+The popup appears automatically when the webpage loads.
 
-At smaller screen sizes, the sections appear in a single column.
+It gives the visitor two choices:
 
-From 768px and above, the Learning and Projects sections are displayed next to each other in two columns, while the About and Contact sections span the full width.
+- Close the popup using the × button
+- Select Contact Me to move directly to the Contact Me section of the page
 
-I also used a two-column Grid for the mobile navigation so that the four navigation links appear as a compact 2 × 2 layout.
+On tablet and desktop screens, the message floats on the right-hand side of the webpage.
 
-### Flexbox
+On smaller mobile screens, it moves to the bottom of the screen so that it does not cover too much of the page content.
 
-Flexbox is used for the navigation on tablet and desktop screens.
+The popup also uses CSS transitions so that it appears and disappears smoothly.
 
-At 768px and above, the navigation changes from the mobile Grid layout into a horizontal row.
+## How the JavaScript Works
 
-Flexbox also helps centre the text inside each navigation link.
+The JavaScript is stored in a separate `script.js` file and linked to the HTML using the `defer` attribute.
 
-## Navigation
+I used `getElementById()` to select the popup, its buttons, and the Contact Me section from the DOM.
 
-The navigation was designed to change depending on the screen size.
+I created functions to control the behaviour of the popup:
 
-On mobile screens, the links are displayed in a 2 × 2 layout so that the buttons remain easy to read and use without taking up too much vertical space.
+- `showContactPopup()` displays the popup
+- `hideContactPopup()` hides the popup
+- `goToContactSection()` closes the popup and moves the visitor to the Contact Me section
 
-On tablet and desktop screens, the navigation changes to one horizontal row.
+Event listeners are used to trigger these functions.
 
-The links also include a transition that changes the background and text colour when the user hovers over or focuses on them.
+The `load` event displays the popup when the page has loaded.
 
-## Custom List Styling
+The `click` event is used for both the close button and the Contact Me button.
 
-The skills list in the What I Am Learning section uses custom check marks instead of the browser's normal list markers.
+The Contact Me button uses JavaScript to select the Contact section and move to it using `scrollIntoView()`.
 
-I removed the default list style and used the `::before` pseudo-element to add a blue check mark before each item.
+This helped me understand how functions, events, and DOM manipulation can work together to make a webpage interactive.
 
-This gave me practice using pseudo-elements and customising lists with CSS.
+## Why I Chose This Interaction
 
-## Transitions and Interaction
+I wanted the JavaScript feature to be relevant to the portfolio instead of adding an interaction only for the sake of the assignment.
 
-I added several small transitions to make the website feel more interactive.
+A contact message gives the visitor a clear way to get in touch while also demonstrating the JavaScript concepts I have been learning.
 
-These include:
+I also chose a custom popup instead of a basic browser alert because it fits the design of the portfolio and gives the visitor more control over the interaction.
 
-- Navigation link hover and focus transitions
-- A colour transition on the contact email link
-- A background colour transition on the Send Message button
-- A hover effect on my portfolio image that slightly increases its size
+## Challenges and Decisions
 
-The transitions are kept simple so that they provide feedback without distracting from the page content.
+One of the main challenges was making sure the popup worked correctly when the website was opened locally from my computer.
 
-## Accessibility
+My first version used a normal link to move to the Contact Me section. During testing, Chrome displayed a security error because the webpage was being opened directly using a local `file:///` address.
 
-I used semantic HTML5 elements such as:
+To solve this, I changed the Contact Me link to a button and used JavaScript with `scrollIntoView()` to move to the Contact section instead.
 
-- `header`
-- `nav`
-- `main`
-- `section`
-- `article`
-- `figure`
-- `footer`
+I also tested an `aria-hidden` attribute when hiding the popup. Chrome displayed a warning because the close button could still have keyboard focus when its parent element became hidden.
 
-The navigation includes an accessible label, form fields are connected to their labels, and the image contains alternative text.
+I removed the unnecessary JavaScript changes to `aria-hidden` and kept the popup visibility controlled through CSS classes instead.
 
-Focus states are also visible for links and form controls to help users navigating with a keyboard.
+These problems helped me understand the importance of testing JavaScript in the browser Console and checking more than whether something only appears to work visually.
 
-## Challenges and Experiments
+## Testing and Debugging
 
-One of the main challenges was deciding how the navigation should behave on smaller screens.
+I used Chrome DevTools to test the JavaScript interaction.
 
-My first mobile version displayed all four navigation buttons underneath each other. Although it worked, the buttons took up too much vertical space.
+I tested that:
 
-I changed the mobile navigation to a 2 × 2 Grid instead. This kept the buttons evenly spaced and easier to use while still allowing them to change into a horizontal Flexbox layout on larger screens.
+- The popup appears when the webpage loads
+- The × button closes the popup
+- The Contact Me button closes the popup
+- The Contact Me button moves the visitor to the correct section
+- The interaction works on a mobile-sized screen
+- The browser Console does not show JavaScript runtime errors
 
-I also tested the two-column Learning and Projects layout at the 768px breakpoint to make sure the content remained readable even though the two sections contain different amounts of text.
+I also used the browser Console while troubleshooting the interaction and corrected the issues that appeared during testing.
 
-Working through the different screen sizes helped me understand how mobile-first CSS, media queries, Grid, and Flexbox can work together.
+## Skills I Am Building
 
-## Styling
+Through this project, I am currently building experience with:
 
-The portfolio uses a simple blue, navy, white, and light grey colour scheme.
-
-Main colours include:
-
-- Navy: `#0f172a`
-- Blue: `#1d4ed8`
-- Light background: `#f8fafc`
-- Border grey: `#e2e8f0`
-- White: `#ffffff`
-
-The main fonts are:
-
-- Poppins for headings
-- Roboto for body text
-
-Fallback fonts are also included in the CSS.
-
-## Validation
-
-The HTML was checked using the Nu HTML Checker.
-
-Result:
-
-**No errors or warnings.**
-
-The CSS was checked using the W3C CSS Validation Service.
-
-Result:
-
-**No errors found.**
+- Semantic HTML5
+- CSS styling and the Box Model
+- Responsive web design
+- Flexbox and CSS Grid
+- Media queries and mobile-first design
+- CSS transitions and interactive states
+- JavaScript variables and constants
+- JavaScript functions
+- Event listeners
+- DOM selection and manipulation
+- Basic conditionals, loops, arrays, and objects
+- Browser DevTools and debugging
+- Git and GitHub version control
 
 ## Project Files
 
-The project contains:
+The project currently contains:
 
-- `index.html` – page structure and content
-- `styles.css` – styling and responsive layout
-- `images/` – portfolio images
-- `README.md` – project documentation
+- `index.html` – the structure and content of the portfolio
+- `styles.css` – the visual design and responsive layout
+- `script.js` – the Module 5 JavaScript interaction
+- `images/` – images used by the portfolio
+- `README.md` – documentation of the project and my learning process
 
 ## What I Learned
 
-This project has helped me understand how a webpage can develop from a basic HTML structure into a responsive website.
+Module 5 helped me understand the difference between creating a webpage that is only structured and styled and creating one that can respond to the visitor.
 
-I have practised:
+HTML provides the structure, CSS controls the presentation, and JavaScript can respond to events and change what happens on the page.
 
-- Semantic HTML5
-- External CSS
-- The CSS Box Model
-- Typography and colour
-- Responsive design
-- Mobile-first development
-- Media queries
-- Flexbox
-- CSS Grid
-- Custom list styling
-- CSS transitions
-- Accessible focus states
-- HTML and CSS validation
-- Git and GitHub
+I also learned that testing and debugging are an important part of JavaScript development. A feature can look like it is working while the browser Console still shows a problem, so checking DevTools helped me find and correct issues that I would otherwise have missed.
 
-I will continue updating the portfolio as I learn more throughout the course.
+I will continue developing this portfolio as I progress through the course and learn more front-end development skills.

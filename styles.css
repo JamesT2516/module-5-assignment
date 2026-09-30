@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: #f8fafc;
@@ -85,8 +89,9 @@ nav a {
     text-align: center;
     font-size: 14px;
     border-radius: 5px;
-    transition: background-color 0.3s ease,
-                color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 nav a:hover,
@@ -165,7 +170,9 @@ article h3 {
 }
 
 
-/* Custom Skills List */
+/* ========================================
+   Custom Skills List
+   ======================================== */
 
 #learning ul {
     list-style: none;
@@ -176,7 +183,7 @@ article h3 {
 #learning li {
     position: relative;
     padding-left: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 #learning li::before {
@@ -254,7 +261,9 @@ button {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 button:hover,
@@ -265,6 +274,107 @@ button:focus {
 #contact em {
     color: #475569;
     font-size: 14px;
+}
+
+
+/* ========================================
+   Module 5 JavaScript Contact Popup
+   ======================================== */
+
+.contact-popup {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    z-index: 1000;
+
+    width: calc(100% - 40px);
+    max-width: 340px;
+
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 5px solid #1d4ed8;
+    border-radius: 8px;
+
+    padding: 25px;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.18);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(35px, -50%);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.contact-popup.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
+}
+
+.contact-popup h2 {
+    color: #1d4ed8;
+    margin: 0 30px 10px 0;
+    font-size: 22px;
+}
+
+.contact-popup p {
+    margin: 0 0 18px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+    background: none;
+    color: #475569;
+    border: none;
+
+    padding: 5px 8px;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+    background: none;
+    color: #0f172a;
+}
+
+.popup-contact-link {
+    display: inline-block;
+
+    background-color: #1d4ed8;
+    color: #ffffff;
+
+    border: none;
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.popup-contact-link:hover,
+.popup-contact-link:focus {
+    background-color: #0f172a;
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
 
@@ -327,6 +437,11 @@ footer p {
     #contact {
         grid-column: 1 / -1;
     }
+
+    .contact-popup {
+        right: 30px;
+        max-width: 360px;
+    }
 }
 
 
@@ -363,5 +478,34 @@ footer p {
 
     figure img {
         width: 280px;
+    }
+
+    .contact-popup {
+        right: 40px;
+        max-width: 380px;
+    }
+}
+
+
+/* ========================================
+   Small Mobile Screens
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .contact-popup {
+        top: auto;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+
+        width: auto;
+        max-width: none;
+
+        transform: translateY(30px);
+    }
+
+    .contact-popup.show {
+        transform: translateY(0);
     }
 }

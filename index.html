@@ -15,15 +15,49 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
+    <!-- Module 5 JavaScript Contact Popup -->
+    <aside
+    id="contact-popup"
+    class="contact-popup"
+    aria-labelledby="popup-title">
+
+        <button
+            type="button"
+            id="close-popup"
+            class="popup-close"
+            aria-label="Close contact message">
+            &times;
+        </button>
+
+        <h2 id="popup-title">Let's Connect</h2>
+
+        <p>
+            Thanks for visiting my portfolio. If you would like to get
+            in touch, you can head straight to my contact section.
+        </p>
+
+        <button
+            type="button"
+            id="popup-contact-button"
+            class="popup-contact-link">
+            Contact Me
+        </button>
+
+    </aside>
+
+
     <header>
+
         <h1>James Taljaard</h1>
 
         <p>
-            Learning front-end development by building, testing, and improving as I go.
+            Learning front-end development by building, testing,
+            and improving as I go.
         </p>
 
         <nav aria-label="Main navigation">
@@ -34,28 +68,41 @@
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
+
     </header>
+
 
     <main>
 
+        <!-- About Me -->
+
         <section id="about">
+
             <h2>About Me</h2>
 
             <p>
                 Hi, I’m James Taljaard. I’m currently working through a
-                front-end web development course and using this portfolio
+                Front-end Web Development course and using this portfolio
                 to put what I learn into practice.
             </p>
 
             <p>
-                I started with the foundations of HTML and have since moved
-                into CSS, responsive design, and more advanced layout
-                techniques. Building this portfolio step by step has helped
-                me understand how structure, styling, accessibility, and
-                responsiveness all work together to create a better website.
+                I started with HTML and learned how to give webpages clear
+                structure. I then moved into CSS, responsive design,
+                Flexbox, and CSS Grid to improve how websites look and
+                adapt across different screen sizes.
+            </p>
+
+            <p>
+                I am now learning JavaScript and beginning to understand
+                how websites can respond to user actions, work with data,
+                and change content dynamically. Building this portfolio
+                one module at a time is helping me understand how HTML,
+                CSS, and JavaScript work together.
             </p>
 
             <figure>
+
                 <img
                     src="images/james-taljaard.jpg"
                     alt="Portrait of James Taljaard"
@@ -65,80 +112,136 @@
                 <figcaption>
                     Learning by building and improving with each module.
                 </figcaption>
+
             </figure>
+
         </section>
 
 
+        <!-- What I Am Learning -->
+
         <section id="learning">
+
             <h2>What I Am Learning</h2>
 
             <article>
-                <h3>Building on the Foundations</h3>
+
+                <h3>Bringing Websites to Life with JavaScript</h3>
 
                 <p>
-                    I started by learning how HTML gives a webpage clear
-                    and meaningful structure. I then moved into CSS and
-                    learned how colour, typography, spacing, and layout
-                    can improve the way a website looks and feels.
+                    After learning how to structure webpages with HTML
+                    and create responsive layouts with CSS, I am now
+                    learning how JavaScript adds behaviour and
+                    interactivity to a website.
                 </p>
 
                 <p>
-                    I am now learning how to build responsive layouts that
-                    adapt across different screen sizes using mobile-first
-                    design, media queries, Flexbox, and CSS Grid.
+                    I am learning how JavaScript can respond to user
+                    actions, make decisions, organise data, and interact
+                    with the Document Object Model to update content on
+                    the page.
                 </p>
 
                 <h3>Skills I’m Building</h3>
 
                 <ul>
-                    <li>Creating structured webpages with semantic HTML5</li>
-                    <li>Styling webpages with external CSS</li>
-                    <li>Working with colour, typography, and the CSS Box Model</li>
-                    <li>Building layouts with Flexbox and CSS Grid</li>
-                    <li>Using media queries and mobile-first responsive design</li>
-                    <li>Creating responsive navigation and custom list styles</li>
-                    <li>Adding transitions and clear focus states for interaction</li>
-                    <li>Using Git and GitHub to manage and track my work</li>
-                    <li>Validating HTML and CSS and correcting errors</li>
+                    <li>
+                        Creating structured and accessible webpages
+                        with semantic HTML5
+                    </li>
+
+                    <li>
+                        Styling responsive layouts using CSS,
+                        Flexbox, Grid, and media queries
+                    </li>
+
+                    <li>
+                        Using transitions, hover effects, and
+                        visible focus states
+                    </li>
+
+                    <li>
+                        Working with JavaScript variables,
+                        constants, functions, and operators
+                    </li>
+
+                    <li>
+                        Using conditionals, loops, arrays, and
+                        objects to work with data
+                    </li>
+
+                    <li>
+                        Selecting and changing webpage elements
+                        using the DOM
+                    </li>
+
+                    <li>
+                        Using event listeners to respond to
+                        user interaction
+                    </li>
+
+                    <li>
+                        Testing, debugging, validating, and
+                        managing projects with Git and GitHub
+                    </li>
                 </ul>
+
             </article>
+
         </section>
 
 
+        <!-- Projects -->
+
         <section id="projects">
+
             <h2>My Projects</h2>
 
             <article>
-                <h3>My First Portfolio Website</h3>
+
+                <h3>My Front-End Portfolio Website</h3>
 
                 <p>
-                    This portfolio is my first ongoing project for the
-                    Front-end Web Development course. It began as a simple
-                    semantic HTML page before I added CSS to improve the
-                    colour, typography, spacing, and overall layout.
+                    This portfolio is my ongoing project for the
+                    Front-end Web Development course. It started as
+                    a simple semantic HTML page and has developed
+                    as I have progressed through each module.
                 </p>
 
                 <p>
-                    I am now developing the site into a responsive portfolio
-                    using a mobile-first approach, media queries, Flexbox,
-                    CSS Grid, custom navigation, and transitions so that it
-                    works well across mobile, tablet, and desktop screens.
+                    I added CSS to improve the colour, typography,
+                    spacing, and layout before making the website
+                    responsive using a mobile-first approach,
+                    media queries, Flexbox, and CSS Grid.
                 </p>
 
                 <p>
-                    As I continue through the course, I’ll keep building on
-                    this project and applying the new skills I learn.
+                    I am now adding JavaScript to introduce behaviour
+                    and interactivity. For Module 5, I created an
+                    interactive contact message that appears when the
+                    page loads and responds to user actions.
                 </p>
+
+                <p>
+                    As I continue through the course, I’ll keep
+                    improving this portfolio and applying the new
+                    skills I learn.
+                </p>
+
             </article>
+
         </section>
 
 
+        <!-- Contact -->
+
         <section id="contact">
+
             <h2>Contact Me</h2>
 
             <p>
-                If you would like to get in touch, you can send me an email
-                or try the practice contact form below.
+                If you would like to get in touch, you can send me an
+                email or use the practice contact form below.
             </p>
 
             <p>
@@ -147,8 +250,11 @@
                 </a>
             </p>
 
+
             <form action="#" method="post">
+
                 <fieldset>
+
                     <legend>Send Me a Message</legend>
 
                     <p>
@@ -182,16 +288,21 @@
                             required></textarea>
                     </p>
 
-                    <button type="submit">Send Message</button>
+                    <button type="submit">
+                        Send Message
+                    </button>
+
                 </fieldset>
+
             </form>
 
             <p>
                 <em>
-                    This form is for practice and is not connected to a
-                    server yet.
+                    This form is for practice and is not connected
+                    to a server yet.
                 </em>
             </p>
+
         </section>
 
     </main>
